@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Social Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>✨ Gold Social Website ✨</h1>
+        <nav>
+            <button onclick="showSection('chat')">Chat</button>
+            <button onclick="showSection('call')">Call</button>
+            <button onclick="showSection('post')">Post</button>
+        </nav>
+        <button onclick="showPopup()">Popup</button>
+    </header>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Welcome to Gold Social Website!</h2>
+            <p>This is a popup example.</p>
+        </div>
+    </div>
+
+    <main>
+        <!-- Chat Section -->
+        <section id="chat" class="section">
+            <h2>Chat</h2>
+            <div id="chat-box"></div>
+            <input type="text" id="chat-input" placeholder="Message लिखें...">
+            <button onclick="sendMessage()">Send</button>
+        </section>
+
+        <!-- Call Section -->
+        <section id="call" class="section" style="display:none;">
+            <h2>Call</h2>
+            <button onclick="startCall()">Start Call</button>
+        </section>
+
+        <!-- Post Section -->
+        <section id="post" class="section" style="display:none;">
+            <h2>Post</h2>
+            <input type="text" id="post-input" placeholder="कुछ लिखें...">
+            <button onclick="createPost()">Post</button>
+            <div id="posts"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
